@@ -1,0 +1,61 @@
+.typography {
+  font-size: 20px !important;
+  line-height: 24.2px !important;
+  font-weight: 700 !important;
+  cursor: pointer;
+  text-decoration: none;
+}
+.typographyActive {
+  font-size: 20px !important;
+  line-height: 24.2px !important;
+  font-weight: 700 !important;
+  cursor: pointer;
+  text-decoration: none;
+  color: #FCFCFC !important;
+}
+.typography:hover {
+  color: #FCFCFC;
+}
+
+.button {
+  height: 52px !important;
+  text-transform: none !important;
+  font-size: 21px !important;
+  font-weight: 700 !important;
+  line-height: 25px !important;
+  background: #007C9E !important;
+  color: #FCFCFC !important;
+  box-shadow: 2px 2px 8px 0px #2F2B57 !important;
+  padding: 15px !important;
+}
+
+.button:hover {
+  transition-duration: 0.1s !important;
+  opacity: 0.8 !important;
+}
+
+.button:after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  left: 0 !important;
+  top:0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 0 !important;
+  transition: all 0.5s !important;
+  box-shadow: 0 0 10px 10px white !important;
+}
+
+.button:active:after {
+  box-shadow: 0 0 0 0 white !important;
+  position: absolute !important;
+  left: 0 !important;
+  top:0 !important;
+  opacity: 1 !important;
+  transition: 0s !important;
+}
+
+.button:active {
+  top: 1px !important;
+}
