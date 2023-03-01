@@ -4,6 +4,7 @@
   font-weight: 700 !important;
   cursor: pointer;
   text-decoration: none;
+  color: #2F2B57 !important;
 }
 .typographyActive {
   font-size: 20px !important;
@@ -14,7 +15,7 @@
   color: #FCFCFC !important;
 }
 .typography:hover {
-  color: #FCFCFC;
+  color: #FCFCFC !important;
 }
 
 .button {
