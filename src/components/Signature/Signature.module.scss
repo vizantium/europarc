@@ -1,0 +1,76 @@
+.signatureMain {
+  background-image: url("./../../../src/assets/images/hometop.png");
+  width: calc(100vw);
+  min-height: 1000px;
+  background-size: cover;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+.eclipse {
+  width: 124.78px !important;
+  height: 121.61px !important;
+  background: #656AE5 !important;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 50% !important;
+  align-items: center !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.eclipseSelected {
+  width: 124.78px !important;
+  height: 121.61px !important;
+  background: #656AE5B5 !important;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 50% !important;
+  align-items: center !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.vector {
+  width: 63px;
+  height: 24px;
+  margin: 0px 8px;
+}
+
+.signatureButton {
+  text-transform: none !important;
+  background: #656AE5 !important;
+  margin-top: 30px !important;
+  padding: 17px 41px !important;
+  color: #FCFCFC !important;
+  font-size: 18px !important;
+}
+
+.signatureButton:hover {
+  text-transform: none !important;
+  background: #656AE5 !important;
+  margin-top: 30px !important;
+  padding: 17px 41px !important;
+  color: #FCFCFC !important;
+  font-size: 18px !important;
+}
+
+.inputFile {
+  width: 700px;
+  height: 183px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.mainContainer {
+  max-width: 1000px !important;
+  background: #FFFEFF !important;
+  margin-top: 90px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  box-shadow: 0px 1px 42px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 11px !important;
+  padding-bottom: 46px !important;
+}

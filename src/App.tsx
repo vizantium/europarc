@@ -1,92 +1,59 @@
 import React from 'react';
+import logo from './logo.svg';
+import './App.css';
 import {Route, Routes} from "react-router-dom";
 import MainPage from "./components/content/MainPage";
 import Home from "./components/Home/Home";
-import Authentication from "./components/Authentication/Authentication";
-import ElectronicSignature from "./components/ElectronicSignature/ElectronicSignature";
-import About from "./components/About/About";
-import VerifySignature from "./components/VerifySignature/VerifySignature";
-import JurAuth from "./components/Authentication/JurAuth";
-import NewJurAuth from "./components/Authentication/NewJurAuth";
-import VerifySignatureResults from "./components/VerifySignature/VerifySignatureResults";
-import GetSignature from "./components/GetSignature/GetSignature";
-import Preloader from "./components/Other/Preloader";
-import ElectronicSignatureChoose from "./components/ElectronicSignature/ElectronicSignatureChoose";
-import ElectronicSignatureDownload from "./components/ElectronicSignature/ElectronicSignatureDownload";
-import GetSignaturePage from "./components/GetSignature/GetSignaturePage";
-
+import {ThemeProvider} from "@mui/material";
+import {theme} from "./components/Other/theme";
+import Signature from "./components/Signature/Signature";
+import SignatureAuthentication from "./components/Signature/SignatureAuthentication";
+import SignatureDownload from "./components/Signature/SignatureDownload";
+import Contacts from "./components/Contacts/Contacts";
+import Documentation from "./components/Documentation/Documentation";
+import GetSign from "./components/GetSign/GetSign";
+import NotFound from "./components/content/NotFound/NotFound";
+import Verification from "./components/Verification/Verification";
+import VerificationResult from "./components/Verification/VerificationResult";
 
 function App() {
     return (
-        <Routes>
-            <Route path={'/'} element={<MainPage/>}>
-                <Route path={''} element={
-                    <React.Suspense fallback={<Preloader/>}>
+        <ThemeProvider theme={theme}>
+            <Routes>
+                <Route path={'/'} element={<MainPage/>}>
+                    <Route path={''} element={
                         <Home/>
-                    </React.Suspense>
-                }/>
-                <Route path={'Authentication'} element={
-                    <React.Suspense fallback={<Preloader/>}>
-                        <Authentication/>
-                    </React.Suspense>
-                }/>
-                <Route path={'GetSignatureFormJur'} element={
-                    <React.Suspense fallback={<Preloader/>}>
-                        <GetSignature/>
-                    </React.Suspense>
-                }/>
-                <Route path={'GetSignature'} element={
-                    <React.Suspense fallback={<Preloader/>}>
-                        <GetSignaturePage/>
-                    </React.Suspense>
-                }/>
-                <Route path={'GetSignatureFormPhys'} element={
-                    <React.Suspense fallback={<Preloader/>}>
-                        <GetSignature/>
-                    </React.Suspense>
-                }/>
-                <Route path={'Authentication/JurAuth'} element={
-                    <React.Suspense fallback={<Preloader/>}>
-                        <JurAuth/>
-                    </React.Suspense>
-                }/>
-                <Route path={'Authentication/NewJurAuth'} element={
-                    <React.Suspense fallback={<Preloader/>}>
-                        <NewJurAuth/>
-                    </React.Suspense>
-                }/>
-                <Route path={'ElectronicSignature'} element={
-                    <React.Suspense fallback={<Preloader/>}>
-                        <ElectronicSignature/>
-                    </React.Suspense>
-                }/>
-                <Route path={'ElectronicSignature/Choose'} element={
-                    <React.Suspense fallback={<Preloader/>}>
-                        <ElectronicSignatureChoose/>
-                    </React.Suspense>
-                }/>
-                <Route path={'ElectronicSignature/Download'} element={
-                    <React.Suspense fallback={<Preloader/>}>
-                        <ElectronicSignatureDownload/>
-                    </React.Suspense>
-                }/>
-                <Route path={'About'} element={
-                    <React.Suspense fallback={<Preloader/>}>
-                        <About/>
-                    </React.Suspense>
-                }/>
-                <Route path={'VerifySignature'} element={
-                    <React.Suspense fallback={<Preloader/>}>
-                        <VerifySignature/>
-                    </React.Suspense>
-                }/>
-                <Route path={'VerifySignature/Results'} element={
-                    <React.Suspense fallback={<Preloader/>}>
-                        <VerifySignatureResults/>
-                    </React.Suspense>
-                }/>
-            </Route>
-        </Routes>
+                    }/>
+                    <Route path={'Signature/Sign'} element={
+                        <Signature/>
+                    }/>
+                    <Route path={'Signature/Authentication'} element={
+                        <SignatureAuthentication/>
+                    }/>
+                    <Route path={'Signature/Download'} element={
+                        <SignatureDownload/>
+                    }/>
+                    <Route path={'Contacts'} element={
+                        <Contacts/>
+                    }/>
+                    <Route path={'Documentation'} element={
+                        <Documentation/>
+                    }/>
+                    <Route path={'GetSign'} element={
+                        <GetSign/>
+                    }/>
+                    <Route path={'Verification/Upload'} element={
+                        <Verification/>
+                    }/>
+                    <Route path={'Verification/Result'} element={
+                        <VerificationResult/>
+                    }/>
+                    <Route path="*" element={
+                        <NotFound/>
+                    } />
+                </Route>
+            </Routes>
+        </ThemeProvider>
     );
 }
 

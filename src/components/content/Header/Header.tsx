@@ -1,13 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {AppBar, Button, Grid, Menu, MenuItem, Typography} from "@mui/material";
-import logo from './../../../assets/logo.png'
-import styles from './Header.module.scss'
-import {Link, useLocation, useParams} from "react-router-dom";
+import logo from './../../../assets/images/logo.png';
+import {Link} from "react-router-dom";
+import styles from './header.module.scss'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import number from './../../../assets/images/number.png'
 
-const Header:React.FC = () => {
-    const params = useLocation()
-    const [activeLink, setActiveLink] = useState('')
+const Header = () => {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [language, setLanguage] = useState('RO')
 
@@ -26,85 +25,94 @@ const Header:React.FC = () => {
         setLanguage(lang)
     }
 
-    useEffect(() => {
-        if (params.pathname.includes('Electronic')) {
-            setActiveLink('Electronic')
-        } else if (params.pathname.includes('Authentication')) {
-            setActiveLink('Authentication')
-        } else if (params.pathname.includes('About')) {
-            setActiveLink('About')
-        } else if (params.pathname.includes('VerifySignature')) {
-            setActiveLink('VerifySignature')
-        } else {
-            setActiveLink('')
-        }
-    },[params])
-
     return (
-            <AppBar sx={{background: '#8AB0BD', height: '120px', display: 'flex', alignItems: 'center', width: '100%'}} position="static">
-                <Grid sx={{maxWidth: '1500px'}} container>
-                    <Grid md={2} item>
-                        <Link to={'/'}>
-                            <img style={{height: '106px', marginTop: '5px', paddingLeft: '10px', cursor: 'pointer'}} src={logo}/>
-                        </Link>
+        <AppBar sx={{background: '#FFFEFF', height: '115px', display: 'flex', alignItems: 'center', width: '100%'}} position="static">
+            <Grid sx={{maxWidth: '1450px', padding: '0px 15px'}} container>
+                <Grid md={2} item>
+                    <Link to={'/'}>
+                        <img style={{height: '94px', marginTop: '10px', paddingLeft: '10px', cursor: 'pointer'}} src={logo}/>
+                    </Link>
+                </Grid>
+                <Grid md={5.5} item sx={{display: 'flex', justifyContent: 'space-around', alignItems: 'center', color: '#2F2B57'}}>
+                    <Grid>
+                        <Typography  sx={{font: 'Poppins', color: '#161D39'}} component={Link} to={'/'}
+                                    className={styles.headerTypography}>
+                            Acasă
+                        </Typography>
                     </Grid>
-                    <Grid md={6.5} item sx={{display: 'flex', justifyContent: 'space-around', alignItems: 'center', color: '#2F2B57'}}>
-                        <Grid>
-                            <Typography component={Link} to={'/About'}
-                                        className={activeLink === 'About' ? styles.typographyActive : styles.typography}>
-                                Despre noi
-                            </Typography>
-                        </Grid>
-                        <Grid>
-                            <Typography component={Link} to={'/ElectronicSignature'}
-                                        className={activeLink === 'Electronic' ? styles.typographyActive : styles.typography}>
-                                Semnează electronic
-                            </Typography>
-                        </Grid>
-                        <Grid>
-                            <Typography component={Link} to={'/VerifySignature'}
-                                        className={activeLink === 'VerifySignature' ? styles.typographyActive : styles.typography}>
-                                Verifică semnătura
-                            </Typography>
-                        </Grid>
-                        <Grid>
-                            <Typography component={Link} to={'/Authentication'}
-                                        className={activeLink === 'Authentication' ? styles.typographyActive : styles.typography}>
-                                Autentificare
-                            </Typography>
-                        </Grid>
+                    <Grid>
+                        <Typography sx={{color: '#161D39'}} component={Link} to={'/Signature/Sign'}
+                                    className={styles.headerTypography}>
+                            Semnează
+                        </Typography>
                     </Grid>
-                    <Grid md={3.5} item sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                        <Button component={Link} to={'/GetSignature'} className={styles.button}>
-                            Obține semnătură
-                        </Button>
-                        <div>
-                            <Button
-                                aria-owns={anchorEl ? "simple-menu" : undefined}
-                                aria-haspopup="true"
-                                onClick={handleClick}
-                                sx={{paddingLeft: '20px', color: '#2F2B57', fontSize: '18px', fontWeight: 700, textTransform: 'none'}}
-                            >
-                                {language}
-                                <ArrowDropDownIcon/>
-                            </Button>
-                            <Menu
-                                id="simple-menu"
-                                anchorEl={anchorEl}
-                                open={Boolean(anchorEl)}
-                                onClose={handleClose}
-                                disableScrollLock={true}
-                                sx={{marginLeft: '10px'}}
-                            >
-                                <MenuItem onClick={() => handleChangeLang('RO')}>RO</MenuItem>
-                                <MenuItem onClick={() => handleChangeLang('EN')}>EN</MenuItem>
-                                <MenuItem onClick={() => handleChangeLang('RU')}>RU</MenuItem>
-                            </Menu>
-                        </div>
+                    <Grid>
+                        <Typography sx={{color: '#161D39'}} component={Link} to={'/Contacts'}
+                                   className={styles.headerTypography}>
+                            Contacte
+                        </Typography>
+                    </Grid>
+                    <Grid>
+                        <Typography sx={{color: '#161D39'}} component={Link} to={'/Documentation'}
+                                    className={styles.headerTypography}>
+                            Ghidul Utilizatorului
+                        </Typography>
+                    </Grid>
+                    <Grid>
+                        <Typography sx={{color: '#161D39'}} component={Link} to={'/Authentication'}
+                                    className={styles.headerTypography}>
+                            Autentificare
+                        </Typography>
                     </Grid>
                 </Grid>
-            </AppBar>
-    );
+                <Grid md={4.5} item sx={{display: 'flex', alignItems: 'center', color: '#161D39', justifyContent: 'right'}} >
+                    <Grid>
+                        <Button
+                            aria-owns={anchorEl ? "simple-menu" : undefined}
+                            aria-haspopup="true"
+                            onClick={handleClick}
+                            sx={{paddingLeft: '20px', color: '#2F2B57', fontSize: '18px', fontWeight: 700, textTransform: 'none'}}
+                        >
+                            {language}
+                            <ArrowDropDownIcon/>
+                        </Button>
+                        <Menu
+                            id="simple-menu"
+                            anchorEl={anchorEl}
+                            open={Boolean(anchorEl)}
+                            onClose={handleClose}
+                            disableScrollLock={true}
+                            sx={{marginLeft: '10px', "& .MuiPaper-root": {
+                                    backgroundColor: "#ffffff",
+                                    color: '#2F2B57',
+                                    fontWeight: 700,
+                                    fontSize: '20px'
+                                }}}
+                        >
+                            <MenuItem sx={{
+                                fontWeight: 700
+                            }} onClick={() => handleChangeLang('RO')}>RO</MenuItem>
+                            <MenuItem sx={{
+                                fontWeight: 700
+                            }} onClick={() => handleChangeLang('EN')}>EN</MenuItem>
+                            <MenuItem sx={{
+                                fontWeight: 700
+                            }} onClick={() => handleChangeLang('RU')}>RU</MenuItem>
+                        </Menu>
+                    </Grid>
+                    <Grid sx={{marginRight: '40px', display: 'flex', cursor: 'pointer'}}>
+                        <img style={{width: '24px'}} src={number}/>
+                        <Typography sx={{fontWeight: 500, fontSize: '14px'}}>+373 78 655 333</Typography>
+                    </Grid>
+                    <Grid>
+                        <Button sx={{width: '174px', height: '50px'}} component={Link} to={'/GetSign'} className={styles.button}>
+                            Obține semnătură
+                        </Button>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </AppBar>
+        );
 };
 
 export default Header;
