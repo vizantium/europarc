@@ -38,7 +38,7 @@ const VerificationResult = () => {
     return (
         <Grid className={styles.signatureMain}>
             <Grid container sx={{maxWidth: '1000px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>
-                <Typography sx={{fontSize: '48px', fontWeight: 500, color: '#161D39', marginTop: '65px'}}>Semnează documente</Typography>
+                <Typography sx={{fontSize: '48px', fontWeight: 500, color: '#161D39', marginTop: '65px'}} className={styles.textH}>Rezultatul Verificării</Typography>
                 <Grid sx={{display: 'flex', flexDirection: 'row', alignItems: 'center', marginTop: '65px'}}>
                     <Grid className={styles.eclipse}>
                         <img src={exportIcon} style={{width: '41px', height: '47px'}}/>
@@ -50,12 +50,12 @@ const VerificationResult = () => {
                 </Grid>
                 <Grid container className={styles.mainContainer}>
                     <Grid container sx={{background: '#696EE6', borderRadius: '11px', marginTop: '46px', maxWidth: '700px', display: 'flex', alignItems: 'center',
-                        flexDirection: 'column', cursor: 'pointer'}} >
-                        <Typography sx={{marginTop: '29px', color: '#FCFCFC', fontWeight: 500, fontSize: '24px', lineHeight: '36px', letterSpacing: '0.06em', marginBottom: '29px'}}>
+                        flexDirection: 'column', cursor: 'pointer'}}  className={styles.block}>
+                        <Typography sx={{marginTop: '29px', color: '#FCFCFC', fontWeight: 500, fontSize: '24px', lineHeight: '36px', letterSpacing: '0.06em', marginBottom: '29px'}} className={styles.select}>
                             Rezultatul Verificării
                         </Typography>
                     </Grid>
-                    <Grid container sx={{maxWidth: '485px', marginTop: '40px'}}>
+                    <Grid container sx={{maxWidth: '485px', marginTop: '40px'}} className={styles.resultBlock}>
                         {/*{*/}
                         {/*    files && files.map((obj: any, index: number) => {*/}
                         {/*        return  <Grid container sx={{marginTop: '20px'}}>*/}
@@ -74,20 +74,20 @@ const VerificationResult = () => {
                         {/*}*/}
                         <Grid container sx={{marginTop: '20px'}}>
                             <Grid container sx={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
-                                <Typography sx={{fontSize: '18px', color: '#8A91AD', fontWeight: 500, letterSpacing: '0.06em'}}>ABC.pdf</Typography>
+                                <Typography sx={{fontSize: '18px', color: '#8A91AD', fontWeight: 500, letterSpacing: '0.06em'}} className={styles.objName}>ABC.pdf</Typography>
                                 <Grid sx={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
-                                    <Typography sx={{fontSize: '18px', color: '#D554FE', fontWeight: 500, letterSpacing: '0.06em'}}>0.15 MB</Typography>
-                                    <img src={verTrue} style={{width: '44px', height: '24px', marginLeft: '8px'}}/>
+                                    <Typography sx={{fontSize: '18px', color: '#D554FE', fontWeight: 500, letterSpacing: '0.06em'}} className={styles.objName}>0.15 MB</Typography>
+                                    <img src={verTrue} style={{width: '41px', height: '24px', marginLeft: '8px'}} className={styles.verifImage}/>
                                 </Grid>
                             </Grid>
                             <div style={{height: '2px', background: '#6A6EE5', width: '100%', marginTop: '3px'}}/>
                         </Grid>
                         <Grid container sx={{marginTop: '20px'}}>
                             <Grid container sx={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
-                                <Typography sx={{fontSize: '18px', color: '#8A91AD', fontWeight: 500, letterSpacing: '0.06em'}}>ABC.pdf</Typography>
+                                <Typography sx={{fontSize: '18px', color: '#8A91AD', fontWeight: 500, letterSpacing: '0.06em'}}  className={styles.objName}>ABC.pdf</Typography>
                                 <Grid sx={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
-                                    <Typography sx={{fontSize: '18px', color: '#D554FE', fontWeight: 500, letterSpacing: '0.06em'}}>0.15 MB</Typography>
-                                    <img src={verFalse} style={{width: '44px', height: '32px', marginLeft: '8px'}}/>
+                                    <Typography sx={{fontSize: '18px', color: '#D554FE', fontWeight: 500, letterSpacing: '0.06em'}}  className={styles.objName}>0.15 MB</Typography>
+                                    <img src={verFalse} style={{width: '36px', height: '27px', marginLeft: '8px'}} className={styles.verifImage}/>
                                 </Grid>
                             </Grid>
                             <div style={{height: '2px', background: '#6A6EE5', width: '100%', marginTop: '3px'}}/>

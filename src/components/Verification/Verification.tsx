@@ -37,7 +37,7 @@ const Verification = () => {
     return (
         <Grid className={styles.signatureMain}>
             <Grid container sx={{maxWidth: '1000px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>
-                <Typography sx={{fontSize: '48px', fontWeight: 500, color: '#161D39', marginTop: '65px'}}>Semnează documente</Typography>
+                <Typography sx={{fontSize: '48px', fontWeight: 500, color: '#161D39', marginTop: '65px'}} className={styles.textH}>Verificare Semnătură</Typography>
                 <Grid sx={{display: 'flex', flexDirection: 'row', alignItems: 'center', marginTop: '65px'}}>
                     <Grid className={styles.eclipseSelected}>
                         <img src={exportIcon} style={{width: '41px', height: '47px'}}/>
@@ -49,17 +49,17 @@ const Verification = () => {
                 </Grid>
                 <Grid container className={styles.mainContainer}>
                     <Grid container sx={{background: '#696EE6', borderRadius: '11px', marginTop: '46px', maxWidth: '700px', display: 'flex', alignItems: 'center',
-                        flexDirection: 'column', cursor: 'pointer'}} >
+                        flexDirection: 'column', cursor: 'pointer'}}  className={styles.block}>
                         <Grid container>
                             <input onChange={handleChange} className={styles.inputFile} type="file"
                                    name="file" id="file"/>
                         </Grid>
-                        <Typography sx={{marginTop: '29px', color: 'white', fontWeight: 500, fontSize: '24px', lineHeight: '36px', letterSpacing: '0.06em'}}>
+                        <Typography sx={{marginTop: '29px', color: 'white', fontWeight: 500, fontSize: '24px', lineHeight: '36px', letterSpacing: '0.06em'}} className={styles.select}>
                             Selectați sau trageți fișiere aici.
                         </Typography>
-                        <img src={uploadIcon} style={{width: '64px', marginTop: '32px', marginBottom: '22px'}}/>
+                        <img src={uploadIcon} style={{width: '64px', marginTop: '32px', marginBottom: '22px'}} className={styles.selectLogo}/>
                     </Grid>
-                    <Grid container sx={{maxWidth: '485px', marginTop: '40px'}}>
+                    <Grid container sx={{maxWidth: '485px', marginTop: '10px'}}>
                         {
                             files && files.map((obj: any, index: number) => {
                                 return  <Grid container sx={{marginTop: '20px'}}>

@@ -13,11 +13,12 @@ import appStore from './../../../assets/images/appStore.png'
 
 const Bottom = () => {
     return (
+        <>
         <Grid sx={{display: 'flex', width: '100%', justifyContent: 'center', background: '##FFFEFF', minHeight: '240px', alignItems: 'center', color: '#2F2B57', flexDirection: 'column'}}>
             <div className={styles.line}/>
             <Grid container sx={{maxWidth: '1350px', paddingTop: '45px', paddingBottom: '25px', paddingLeft: '15px', paddingRight: '15px'}}>
-                <Grid sx={{paddingLeft: '10px', display: 'flex', flexDirection: 'column'}} item md={4}>
-                    <img src={logo} style={{width: '135px', marginLeft: '15px'}}/>
+                <Grid sx={{paddingLeft: '10px', display: 'flex', flexDirection: 'column'}} className={styles.rightBottom} item lg={4} xs={12}>
+                    <img src={logo} style={{width: '135px', marginLeft: '15px'}} className={styles.bottomLogo}/>
                     <Grid>
                         <img src={visaCard} style={{width: '70px', marginTop: '30px'}}/>
                         <img src={masterCard} style={{width: '70px', marginTop: '30px'}}/>
@@ -29,55 +30,55 @@ const Bottom = () => {
                         <img src={whatsapp} style={{width: '39px', cursor: 'pointer', marginLeft: '5px'}}/>
                     </Grid>
                 </Grid>
-                <Grid md={4} item sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}} >
+                <Grid lg={4} xs={12} item sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}} >
                     <Grid >
-                        <Typography >
+                        <Typography  className={styles.textCenter}>
                             Termeni şi condiţii
                         </Typography>
-                        <Typography sx={{marginTop: '13px'}}>
+                        <Typography sx={{marginTop: '13px'}} className={styles.textCenter}>
                             Politica de securitate
                         </Typography>
-                        <Typography sx={{marginTop: '13px'}}>
+                        <Typography sx={{marginTop: '13px'}} className={styles.textCenter}>
                             Întrebări frecvente
                         </Typography>
-                        <Typography sx={{marginTop: '13px'}}>
+                        <Typography sx={{marginTop: '13px'}} className={styles.textCenter}>
                             Registrul cheilor publice
                         </Typography>
 
                     </Grid>
                 </Grid>
-                <Grid md={4} item sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-end'}}>
+                <Grid lg={4} xs={12} item sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-end'}} className={styles.leftBottom}>
                     <Grid>
-                        <Typography sx={{marginTop: '-15px', fontSize: '20px', fontWeight: 600}}>
+                        <Typography sx={{marginTop: '-15px', fontSize: '20px', fontWeight: 600}} className={styles.textContact}>
                             Contacte
                         </Typography>
-                        <Typography sx={{marginTop: '15px'}}>
+                        <Typography sx={{marginTop: '15px'}} className={styles.textCenter}>
                             Moldova, Chișinău, str. Calea Ieșilor 10B,
                         </Typography>
-                        <Typography sx={{font: 'Inter'}}>
+                        <Typography sx={{font: 'Inter'}} className={styles.textCenter}>
                             MD-2069
                         </Typography>
-                        <Typography sx={{marginTop: '15px'}}>
+                        <Typography sx={{marginTop: '15px'}} className={styles.textCenter}>
                             info@europarc.md
                         </Typography>
-                        <Typography sx={{marginTop: '15px'}}>
+                        <Typography sx={{marginTop: '15px'}} className={styles.textCenter}>
                             09:00-16:00
                         </Typography>
-
                     </Grid>
                 </Grid>
             </Grid>
             <div className={styles.line}/>
             <Grid container sx={{maxWidth: '1350px', paddingTop: '25px', paddingBottom: '25px', display: 'flex', alignItems: 'center', justifyContent: 'right'}}>
-                    <Grid item md={6} sx={{display: 'flex', flexDirection: 'row'}}>
+                    <Grid item xs={12} lg={6} sx={{display: 'flex', flexDirection: 'row'}} className={styles.bottomMApps}>
                         <img src={googlePlay} style={{height: '50px', width: '170px', cursor: 'pointer'}}/>
-                        <img src={appStore} style={{height: '50px', width: '170px', marginLeft: '10px', cursor: 'pointer'}}/>
+                        <img src={appStore} style={{height: '50px', width: '170px', marginLeft: '10px', cursor: 'pointer'}} className={styles.appStore}/>
                     </Grid>
-                    <Grid sx={{display: 'flex', justifyContent: 'right'}} md={6} item>
+                    <Grid sx={{display: 'flex', justifyContent: 'right'}} xs={12} lg={6} item  className={styles.bottomEuroparc}>
                         <Typography>© Europarc 2023</Typography>
                     </Grid>
             </Grid>
         </Grid>
+        </>
     );
 };
 

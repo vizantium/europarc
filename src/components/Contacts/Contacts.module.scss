@@ -40,4 +40,47 @@
   font-size: 13px !important;
   line-height: 20px !important;
   letter-spacing: 0.02em !important;
+  text-decoration: none !important;
+  color: #000000 !important;
+}
+
+@media (max-width: 1200px) {
+  .contactInfoEmail {
+    margin-top: 20px !important;
+  }
+  .inputs {
+    margin-top: 30px !important;
+  }
+  .titleContact {
+    font-size: 38px !important;
+  }
+  .contactBlock {
+    padding: 20px!important;
+    padding-top: 40px !important;
+    margin-top: 40px !important;
+  }
+  .contactsMain {
+    padding: 10px !important;
+  }
+  .contactInfo {
+    margin-top: 30px !important;
+  }
+  .inputBlock {
+    height: auto !important;
+  }
+  .map {
+    margin-top: 20px !important;
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin-bottom: 20px !important;
+  }
+}
+
+@media (max-width: 490px) {
+  .contactInfo {
+    margin-top: 30px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
 }

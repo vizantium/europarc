@@ -45,7 +45,7 @@ const SignatureDownload = () => {
     return (
         <Grid className={styles.signatureMain}>
             <Grid container sx={{maxWidth: '1000px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>
-                <Typography sx={{fontSize: '48px', fontWeight: 500, color: '#161D39', marginTop: '65px'}}>Semnează documente</Typography>
+                <Typography sx={{fontSize: '48px', fontWeight: 500, color: '#161D39', marginTop: '65px'}} className={styles.textH}>Descarcă</Typography>
                 <Grid sx={{display: 'flex', flexDirection: 'row', alignItems: 'center', marginTop: '65px'}}>
                     <Grid className={styles.eclipse}>
                         <img src={exportIcon} style={{width: '41px', height: '47px'}}/>
@@ -69,13 +69,13 @@ const SignatureDownload = () => {
                 </Grid>
                 <Grid container className={styles.mainContainer}>
                     <Grid container sx={{background: '#F5FEDF', borderRadius: '11px', marginTop: '46px', maxWidth: '700px', display: 'flex', alignItems: 'center',
-                        flexDirection: 'column', cursor: 'pointer'}} >
-                        <Typography sx={{marginTop: '29px', color: '#161D39', fontWeight: 500, fontSize: '24px', lineHeight: '36px', letterSpacing: '0.06em'}}>
+                        flexDirection: 'column', cursor: 'pointer'}}  className={styles.block}>
+                        <Typography sx={{marginTop: '29px', color: '#161D39', fontWeight: 500, fontSize: '24px', lineHeight: '36px', letterSpacing: '0.06em'}} className={styles.select}>
                             Selectați sau trageți fișiere aici.
                         </Typography>
-                        <img src={downloadButton} style={{width: '64px', marginTop: '32px', marginBottom: '22px'}}/>
+                        <img src={downloadButton} style={{width: '64px', marginTop: '32px'}} className={styles.selectLogo}/>
                     </Grid>
-                    <Grid container sx={{maxWidth: '485px', marginTop: '40px'}}>
+                    <Grid container sx={{maxWidth: '485px', marginTop: '40px'}} className={styles.downloadFiles}>
                         {/*{*/}
                         {/*    files && files.map((obj: any, index: number) => {*/}
                         {/*        return  <Grid container sx={{marginTop: '20px'}}>*/}
@@ -92,11 +92,11 @@ const SignatureDownload = () => {
 
                         {/*    })*/}
                         {/*}*/}
-                        <Grid container sx={{marginTop: '20px'}}>
+                        <Grid container sx={{marginTop: '40px'}}>
                             <Grid container sx={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
-                                <Typography sx={{fontSize: '18px', color: '#8A91AD', fontWeight: 500, letterSpacing: '0.06em'}}>ABC.pdf</Typography>
+                                <Typography sx={{fontSize: '18px', color: '#8A91AD', fontWeight: 500, letterSpacing: '0.06em'}} className={styles.objName}>ABC.pdf</Typography>
                                 <Grid sx={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
-                                    <Typography sx={{fontSize: '18px', color: '#D554FE', fontWeight: 500, letterSpacing: '0.06em'}}>0.15 MB</Typography>
+                                    <Typography sx={{fontSize: '18px', color: '#D554FE', fontWeight: 500, letterSpacing: '0.06em'}} className={styles.objName}>0.15 MB</Typography>
                                     <img src={showPDF} style={{width: '21px', height: '13px', marginLeft: '8px'}}/>
                                     <img src={downloadIcon} style={{width: '28px', marginLeft: '8px'}}/>
                                 </Grid>

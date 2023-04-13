@@ -64,3 +64,40 @@
   text-transform: none !important;
   background: #656AE5 !important;
 }
+
+@media (max-width: 1200px) {
+  .getSignMain {
+    padding: 15px !important;
+  }
+  .getSignMainBlock {
+    margin-top: 10px !important;
+    padding-bottom: 40px !important;
+  }
+  .getSignTitle {
+    font-size: 36px !important;
+    line-height: 48px !important;
+    text-align: center !important;
+  }
+  .nameInputs {
+    font-size: 20px !important;
+    width: 180px !important;
+  }
+  .radioText {
+    font-size: 17px !important;
+  }
+  .formRadio {
+    margin-top: 10px !important;
+  }
+  .price {
+    font-size: 20px !important;
+  }
+  .buttonGetSign {
+    font-size: 16px !important;
+  }
+  .checkForm {
+    margin-top: 20px !important;
+  }
+  .getSignMain {
+    min-height: 900px !important;
+  }
+}
