@@ -12,6 +12,9 @@ import {
 } from "@mui/material";
 import styles from './GetSign.module.scss'
 import {BootstrapInput} from "../Other/BootstrapInput";
+import {Link} from "react-router-dom";
+import Termeni from './../../assets/pdf/Termeni.pdf'
+import Securitate from './../../assets/pdf/Politica de protecție a datelor cu caracter personal.pdf'
 
 const GetSign = () => {
     return (
@@ -74,19 +77,26 @@ const GetSign = () => {
                     <Typography sx={{fontWeight: 700, fontSize: '20px', letterSpacing: '0.06em', lineHeight: '30px', marginLeft: '5px'}} className={styles.price}>100 MDL</Typography>
                 </Grid>
                 <div className={styles.line} style={{marginTop: '15px'}}/>
-                <FormGroup sx={{marginTop: '55px', display: 'flex', justifyContent: 'left', alignItems: 'normal' }} className={styles.checkForm}>
-                <FormControlLabel className={styles.radioText} control={<Checkbox sx={{
-                    color: '#656AE5',
-                    '&.Mui-checked': {
+                <FormGroup sx={{marginTop: '45px', display: 'flex', justifyContent: 'left', alignItems: 'normal' }} className={styles.checkForm}>
+                <Grid sx={{display: 'flex', alignItems: 'center'}}>
+                    <FormControlLabel className={styles.radioText} control={<Checkbox sx={{
                         color: '#656AE5',
-                    },
-                }} defaultChecked />} label="Sunt Deacord cu regulamentul" />
-                <FormControlLabel sx={{marginTop: '10px'}} className={styles.radioText} control={<Checkbox sx={{
-                    color: '#656AE5',
-                    '&.Mui-checked': {
+                        '&.Mui-checked': {
+                            color: '#656AE5',
+                        },
+                    }} defaultChecked />} label="" />
+                    <Typography component={Link} target="_blank" to={Termeni} sx={{fontSize: '16px', color: '#787878', marginLeft: '-15px', letterSpacing: '0.07em', lineHeight: '20px', textDecoration: 'none'}}>Sunt Deacord cu regulamentul</Typography>
+                </Grid>
+                    <Grid sx={{display: 'flex', alignItems: 'center', marginTop: '10px'}}>
+                    <FormControlLabel className={styles.radioText} control={<Checkbox sx={{
                         color: '#656AE5',
-                    },
-                }} defaultChecked/>} label="Prelucrarea datelor cu caracter personal. Termeni si conditii" />
+                        '&.Mui-checked': {
+                            color: '#656AE5',
+                        },
+                    }} defaultChecked />} label="" />
+                    <Typography component={Link} target="_blank" to={Securitate} sx={{fontSize: '16px', color: '#787878', marginLeft: '-15px', letterSpacing: '0.07em', lineHeight: '20px', textDecoration: 'none'}}>Prelucrarea datelor cu caracter personal. Termeni si conditii</Typography>
+                </Grid>
+
                 </FormGroup>
                 <Grid sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '20px', flexDirection: 'column'}}>
                     <Typography sx={{color: '#161D39', fontWeight: 600, fontSize: '20px', letterSpacing: '0.06em', marginBottom: '40px'}}>După comandarea semnăturii, veți fi apelat.</Typography>

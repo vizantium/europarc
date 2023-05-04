@@ -26,10 +26,10 @@ const Home = () => {
                                 <Button component={Link} to={'/Signature/Sign'} className={styles.buttonFirst}>
                                     Semnează
                                 </Button>
-                                <Button component={Link} to={'/Signature/Sign'} className={styles.buttonFirst}>
+                                <Button component={Link} to={'/Verification/Upload'} className={styles.buttonFirst}>
                                     Verifică
                                 </Button>
-                                <Button component={Link} to={'/Signature/Sign'} className={styles.buttonFirst}>
+                                <Button component={Link} to={'/GetSign'} className={styles.buttonFirst}>
                                     Obtine
                                 </Button>
                             </Grid>

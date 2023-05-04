@@ -10,6 +10,11 @@ import telegram from './../../../assets/images/telegram.png'
 import whatsapp from './../../../assets/images/whatsapp.png'
 import googlePlay from './../../../assets/images/googlePlay.png'
 import appStore from './../../../assets/images/appStore.png'
+import {Link} from "react-router-dom";
+import Termeni from './../../../assets/pdf/Termeni.pdf'
+import Registrul from './../../../assets/pdf/Regulametul PKI_vers 18.4.pdf'
+import Securitate from './../../../assets/pdf/Politica de protecție a datelor cu caracter personal.pdf'
+import Intrebari from './../../../assets/pdf/Politica de Netransmisibilitate a datelor de card EUROPARC.pdf'
 
 const Bottom = () => {
     return (
@@ -31,17 +36,17 @@ const Bottom = () => {
                     </Grid>
                 </Grid>
                 <Grid lg={4} xs={12} item sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}} >
-                    <Grid >
-                        <Typography  className={styles.textCenter}>
+                    <Grid sx={{display: 'flex', flexDirection: 'column'}} >
+                        <Typography component={Link} target="_blank" to={Termeni} sx={{color: '#2F2B57', textDecoration: 'none'}}   className={styles.textCenter}>
                             Termeni şi condiţii
                         </Typography>
-                        <Typography sx={{marginTop: '13px'}} className={styles.textCenter}>
+                        <Typography component={Link} target="_blank" to={Securitate}  sx={{marginTop: '13px', color: '#2F2B57', textDecoration: 'none'}} className={styles.textCenter}>
                             Politica de securitate
                         </Typography>
-                        <Typography sx={{marginTop: '13px'}} className={styles.textCenter}>
+                        <Typography component={Link} target="_blank" to={Intrebari}  sx={{marginTop: '13px', color: '#2F2B57', textDecoration: 'none'}} className={styles.textCenter}>
                             Întrebări frecvente
                         </Typography>
-                        <Typography sx={{marginTop: '13px'}} className={styles.textCenter}>
+                        <Typography component={Link} target="_blank" to={Registrul}  sx={{marginTop: '13px', color: '#2F2B57', textDecoration: 'none'}} className={styles.textCenter}>
                             Registrul cheilor publice
                         </Typography>
 
